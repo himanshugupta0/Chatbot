@@ -1,0 +1,59 @@
+<ion-navbar *navbar>
+  <ion-title>
+    SignUp
+  </ion-title>
+</ion-navbar>
+
+<ion-content style="text-align: center">
+  <img src="img/munshiji.png">
+
+  <div style="text-align: center;margin-top: 8%">
+
+   <form (ngSubmit)="signUp()" [formGroup]="addForm">
+
+    <ion-item class="form-group">
+     <ion-input type="text" name="name" placeholder="Full Name" class="form-control" maxlength="15" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-group">
+     <ion-input type="email" name="email" placeholder="Email" class="form-control" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-group">
+     <ion-input type="number" name="phone" placeholder="Phone(10 digit)" class="form-control" maxlength="10" minlength="10" formControlName="phone"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-group">
+     <ion-label>Select Country</ion-label>
+      <ion-select class="form-control" formControlName="country">
+       <ion-option value="ind" selected="true">India</ion-option>
+       <ion-option value="usa">USA</ion-option>
+     </ion-select>
+    </ion-item>
+
+    <ion-item class="form-group">
+     <ion-input type="password" name="password" placeholder="Create Password" maxlength="12" class="form-control" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-group">
+     <ion-input type="password" name="repass" placeholder="Re-Enter Password" maxlength="12" class="form-control" formControlName="repass"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-group">
+     <ion-input type="email" name="refferalId" placeholder="Refferal Email Id" class="form-control" formControlName="refferalId"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-group">
+     <ion-input type="text" name="refferalCode" placeholder="Refferal Code" class="form-control" formControlName="refferalCode"></ion-input>
+    </ion-item>
+
+    <div style="padding-top: 8%">
+     <button ion-button round outline type="submit" [disabled]="!addForm.valid">SIGNUP</button>
+    </div>
+   </form>
+
+   <button ion-button clear (click)="GoToLogin()">Already have an account? Login</button>
+
+  </div>
+  
+</ion-content>

@@ -1,0 +1,66 @@
+page-chatpage {
+    ion-input {
+        max-width: 80%;
+        font-size: 16px;
+    }
+    .item-ios ion-avatar[item-right], .item-ios ion-thumbnail[item-right] {
+        margin: 0px;
+    }
+    .send{
+        float: right;
+    }
+    .ionCard{
+        text-align: center;
+        font-size: 16px;
+    }
+    
+    .first {
+        float: right;
+        position: absolute;
+        padding-left: 18px;
+        top: 24%;
+        font-size: 40px;
+        width: 100%;
+        font-weight: bold;
+        color: whitesmoke;
+    }
+    .label-md {
+        margin: 0px;
+    }
+    .input-wrapper {
+        margin-right: -8px;
+    }
+    .item-ios {
+        padding-left: 0px;
+    }
+    .item-md {
+        padding: 0px;
+        margin: 0px;
+    }
+    .label label-ios {
+        margin: 0;
+    }
+    .item-inner {
+        margin-right: -1%;
+    }
+    .grid {
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .list-md {
+        margin: 0px;
+    }
+    .item-md ion-avatar[item-left], .item-md ion-thumbnail[item-left] {
+        margin: 0px;
+    }
+    .fixed-content {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+    }
+
+}

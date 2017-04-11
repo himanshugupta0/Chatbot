@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ChatPage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-list no-lines>
+
+      <ion-item [hidden]="gridHidden" >
+        <ion-grid>
+          <h2 style="text-align: center; padding-top: 10%"> Our Services</h2>
+          <ion-row>
+            <ion-col>
+              <div *ngFor="let card of cardDetails" style="float:left;width:50%;">
+              <ion-card (click)="selectCard(card)">
+                <img src="{{card.image}}"/>
+                <ion-card-content class="ionCard">
+                    {{card.name}}
+                </ion-card-content>                      
+                </ion-card>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <div *ngFor="let unames of uname">
+
+        <div *ngIf="unames.username == 'MunshiJi'" >
+          <ion-item text-wrap>
+            <ion-avatar item-left>
+              <img src="img/munshiji.png" style="width: 63px;height: 63px;">
+            </ion-avatar>
+            <h2 style="margin: 0px;">
+              {{unames.chat}}
+            </h2>
+          </ion-item>
+        </div>
+
+        <div *ngIf="unames.username != 'MunshiJi'" >
+            <ion-item>
+              <ion-avatar item-right>
+                <img src="img/circle.png" style="width: 63px;height: 63px;" ><div class="first">{{first}}</div>
+              </ion-avatar>
+              <h2 style="float: right;margin: 0px;">{{unames.chat}}</h2>
+            </ion-item>
+
+        </div>
+
+      </div>
+
+    </ion-list>
+ 
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div>
+      <form (ngSubmit)="send(chatinp)" [formGroup]="sendMsgForm">
+        <div style="display: flex" class="form-group">
+          <ion-input type="text" [(ngModel)]="chatinp" name="msg" placeholder="Enter your message" class="form-control" formControlName="msg"></ion-input>
+          <button ion-button round outline class="send" [disabled]="!sendMsgForm.valid">Send</button>
+        </div>
+      </form>
+    </div>
+  </ion-toolbar>
+</ion-footer>

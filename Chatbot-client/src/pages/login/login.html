@@ -1,0 +1,35 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Login
+  </ion-title>
+</ion-navbar>
+
+<ion-content style="text-align: center">
+
+  <img src="img/munshiji.png" style="margin-top: 15%">
+  <!--<p style="text-align: center; padding-top: 20%">Enter your name to proceed..</p>-->
+
+  <div style="text-align: center;margin-top: 20%">  
+
+   <form (ngSubmit)="login()" [formGroup]="addForm">
+
+    <ion-item class="form-group">
+     <ion-input type="text" [(ngModel)]="username" name="username" placeholder="Username" class="form-control" formControlName="username" highlight></ion-input>
+    </ion-item>
+
+    <ion-item class="form-group">
+     <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Password" class="form-control" formControlName="password"></ion-input>
+    </ion-item>
+
+    <div style="padding-top: 8%">
+     <button ion-button round outline type="submit" [disabled]="!addForm.valid">LOGIN</button>
+    </div>
+
+   </form>
+
+   <button ion-button clear (click)="goTosignUp()">Create an account</button>
+   <button ion-button clear (click)="forgetPassword()">Forget Password</button>
+
+  </div>
+  
+</ion-content>

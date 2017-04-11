@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{card.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div style="text-align: center;margin-top: 30%">
+    <ion-card>
+      <img src="{{card.image}}"/>
+      <ion-card-content>
+        {{card.name}}
+      </ion-card-content>
+    </ion-card>
+    <p> {{card.name}} Discription///////////////////////////////////</p>
+    <button ion-button clear (click)="createService()">Create {{card.name}}</button>
+  </div>
+</ion-content>
